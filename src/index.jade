@@ -1,0 +1,39 @@
+doctype html5
+html
+  head
+    meta(charset="utf-8")
+    title mdtestui
+    script(src="/lib/mithril.min.js")
+    script(src="/mdtestui.js")
+    script#index-root(type="text/template")
+      p
+        button.new-test New Test
+      section.search
+      section.tests
+    script#test-root(type="text/template")
+      button.index index
+      section.view
+    script#test-edit-root(type="text/template")
+      button.index index
+      section.edit
+      section.view
+    script#test-edit(type="text/template")
+      ul.errors
+      h1: input.title(placeholder="タイトル")
+      p: input.description(placeholder="説明")
+      p: textarea.test
+      p: button.submit submit
+    script#test-view(type="text/template")
+      h1.title
+      p.description
+      p: button.edit Edit
+      p.test
+    script#index-search(type="text/template")
+      input.title(type="search", placeholder="タイトル")
+    script#index-test(type="text/template")
+      p.title none
+  body
+    header
+      h1 Markdown Test UI
+      p テスト！テスト！テスト！
+    main
